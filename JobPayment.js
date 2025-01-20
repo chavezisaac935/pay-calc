@@ -1,23 +1,25 @@
 class JobPayment {
-    constructor(regularHours, regularPayRate, stateAbreviation) {
-        this.regularHours = regularHours;
-        this.regularPayRate = regularPayRate;
-        this.stateAbreviation = stateAbreviation;
+    constructor(regularHours, regularPayRate, stateAbbreviation) {
+        this._regularHours = regularHours;
+        this._regularPayRate = regularPayRate;
+        this._stateAbbreviation = stateAbbreviation;
     }
 
     get regularHours(){
-        return this.regularHours;
+        return this._regularHours;
     }
 
     get regularPayRate() {
-        return this.regularPayRate;
+        return this._regularPayRate;
     }
 
     get stateAbreviation() {
-        return this.stateAbreviation;
+        return this._stateAbbreviation;
     }
 
     calculateGrossPay() {
-        return this.regularHours * this.regularPayRate;
+        return this._regularHours * this._regularPayRate;
     }
 }
+
+export default JobPayment;
