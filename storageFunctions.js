@@ -13,17 +13,21 @@ export const setData = (payData) => {
     payHistory.push(payData);
     const stringifyList = JSON.stringify(payHistory);
     localStorage.setItem("payDataList" , stringifyList);
-    console.log("data saved! 😀");
+    // console.log("data saved! 😀");
 }  
 
 
 //retrieve the array of data using getData
 export const getData = () => {
   const tempList = localStorage.getItem("payDataList");
-  payHistory = JSON.parse(tempList)
-  console.log("retrieved data")
-  console.log(payHistory)
+  payHistory = JSON.parse(tempList);
+  console.log(payHistory);
 }
 
 
 //reset data
+export const deleteData  = () => { 
+  localStorage.removeItem("payDataList")
+  payHistory = [];
+  console.log("deleted data");
+ }

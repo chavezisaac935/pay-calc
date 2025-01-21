@@ -1,5 +1,5 @@
 import JobPayment from "./JobPayment.js";
-import {setData , getData} from "./storageFunctions.js"
+import {setData , getData, deleteData} from "./storageFunctions.js"
 
 let hoursWorkedInput;
 let payRateInput;
@@ -23,3 +23,8 @@ button.addEventListener("click", (event) => {
     setData(jobPay)
     getData()
 });
+
+const deleteButton = document.getElementById("clearButton");
+deleteButton.addEventListener("click", (event) => { 
+    deleteData()
+ })
