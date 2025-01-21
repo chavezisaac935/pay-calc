@@ -1,4 +1,5 @@
 import JobPayment from "./JobPayment.js";
+import {setData , getData} from "./storageFunctions.js"
 
 let hoursWorkedInput;
 let payRateInput;
@@ -18,4 +19,7 @@ button.addEventListener("click", (event) => {
     
     jobPay = new JobPayment(hoursWorkedInput,payRateInput,stateAbbreviationInput);
     console.log(jobPay);
+
+    setData(jobPay)
+    getData()
 });
