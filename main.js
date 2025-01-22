@@ -6,6 +6,8 @@ let payRateInput;
 let stateAbbreviationInput;
 let jobPay;
 
+
+//button logic
 const button = document.getElementById("calculateButton");
 button.addEventListener("click", (event) => {
     hoursWorkedInput = document.getElementById("hoursWorked").value;

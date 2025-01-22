@@ -2,6 +2,7 @@
 
 //data to be saved in a string of job Payment objects
 let payHistory
+let payHistoryID = 0
 
 
 //save the data
@@ -14,6 +15,7 @@ export const setData = (payData) => {
     const stringifyList = JSON.stringify(payHistory);
     localStorage.setItem("payDataList" , stringifyList);
     // console.log("data saved! 😀");
+    displayData(payData)
 }  
 
 
@@ -30,4 +32,24 @@ export const deleteData  = () => {
   localStorage.removeItem("payDataList")
   payHistory = [];
   console.log("deleted data");
+
+  //FIXME: get every instance of .payHistoryCards (class) and delete them
  }
+
+
+
+//  //present the data 
+//  export const displayData = (payData) => {
+
+//   let payHistoryCard = document.createElement("div");
+//   payHistoryCard.id =`payHistory${payHistoryID}`;
+//   payHistoryCard.className = 'payHistoryCards';
+
+//   //insert payData in here
+//   payHistoryCard.innerHTML = `payHistory${payHistoryID}`
+//   //
+
+//   document.body.appendChild(payHistoryCard)
+//   payHistoryID++;
+   
+//  }
