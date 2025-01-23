@@ -1,10 +1,15 @@
 import JobPayment from "./JobPayment.js";
-import {setData , getData, deleteData} from "./storageFunctions.js"
+import {setData , getData, deleteData, loadDataUponReload} from "./storageFunctions.js"
 
 let hoursWorkedInput;
 let payRateInput;
 let stateAbbreviationInput;
 let jobPay;
+
+//upon window load check for stored info to show
+window.addEventListener('load' , () => {
+  loadDataUponReload()
+})
 
 
 //button logic
