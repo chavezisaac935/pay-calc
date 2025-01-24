@@ -1,10 +1,5 @@
 import JobPayment from "./JobPayment.js";
-import {setData , getData, deleteData, loadDataUponReload} from "./storageFunctions.js"
-
-let hoursWorkedInput;
-let payRateInput;
-let stateAbbreviationInput;
-let jobPay;
+import {setData , getData, deleteData, loadDataUponReload} from "./StorageFunctions.js"
 
 //upon window load check for stored info to show
 window.addEventListener('load' , () => {
@@ -15,6 +10,12 @@ window.addEventListener('load' , () => {
 //button logic
 const button = document.getElementById("calculateButton");
 button.addEventListener("click", (event) => {
+
+    let hoursWorkedInput;
+    let payRateInput;
+    let stateAbbreviationInput;
+    let jobPay;
+
     hoursWorkedInput = document.getElementById("hoursWorked").value;
     console.log(hoursWorkedInput);
     
