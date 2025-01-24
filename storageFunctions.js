@@ -1,3 +1,4 @@
+import { displayData } from "./UiFunctions.js"
 //local storage functions called from here
 
 // ************* CONTENTS *******************************************
@@ -27,7 +28,7 @@ export const setData = (payInstance) => {
     const stringifyList = JSON.stringify(payHistory);
     localStorage.setItem("payDataList" , stringifyList);
     // console.log("data saved! 😀");
-    displayData(payInstance)
+    displayData(payInstance, payHistoryID)
 
 }  
 
@@ -41,23 +42,6 @@ export const getData = () => {
 
 }
 
-//present the data 
-const displayData = (payInstance) => {
-  
-  let payHistoryCard = document.createElement("div");
-  payHistoryCard.id =`payHistory${payHistoryID}`;
-  payHistoryCard.className = 'payHistoryCards';
-  
-
-  //FIXME
-  //INSERT THE PAY DATA HERE
-  payHistoryCard.innerHTML = `ID: payHistory${payHistoryID}. <br> Display payInstance here <br> <br>`;
-  //
-  
-  document.body.appendChild(payHistoryCard);
-  payHistoryID++;
-  
-}
 
 export const loadDataUponReload = () => {
 
@@ -65,7 +49,7 @@ export const loadDataUponReload = () => {
 
   payHistoryID = 0;
   if (payHistory) {
-    payHistory.forEach( payInstance => { displayData(payInstance) } )
+    payHistory.forEach( payInstance => { displayData(payInstance, payHistoryID) } )
   }
 
 }
