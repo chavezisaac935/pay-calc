@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pay Calc App</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h1>Job Payment Calculator</h1>
+
     <label for="hoursWorked">Hours Worked</label>
     <input type="text" id="hoursWorked" name="hoursWorked" />
     <br />
@@ -15,9 +18,12 @@
     <label for="stateAbbreviation">State Abbreviation</label>
     <input type="text" id="stateAbbreviation" name="stateAbreviation" />
     <br />
-    <button id="calculateButton">Caculate</button>
-    <br />
-    <button id="clearButton">Clear History</button>
+
+    <div id="buttonArea">
+      <button id="calculateButton">Caculate</button>
+      <br />
+      <button id="clearButton">Clear History</button>
+    </div>
 
     <script type="module" src="main.js"></script>
   </body>

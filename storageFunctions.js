@@ -9,7 +9,8 @@
 
  const loadDataUponReload = () => {
     const tempList = localStorage.getItem("payDataList");
-    storedData = JSON.parse(tempList);
+    //bellow: if tempList = empy aka null, make sure storedData is [] and not null
+    storedData = JSON.parse(tempList) ? JSON.parse(tempList) : []; 
     console.log(storedData);
     return storedData
  }
