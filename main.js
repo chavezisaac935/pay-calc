@@ -1,17 +1,10 @@
 import JobPayment from "./JobPayment.js";
 import { storage } from "./StorageFunctions.js";
-import { display } from "./UiFunctions.js";
-
-let paymentHistory = []
-let payID = 0
+import { ui } from "./UiFunctions.js";
 
 window.addEventListener('load' , () => {
-  paymentHistory = storage.loadDataUponReload()
-
-  for (let i = 0; i < paymentHistory.length; i++) {
-    display.displayPayment(paymentHistory[i] , payID)
-    payID++
-  }
+  let paymentHistory = storage.loadDataUponReload()
+  ui.reloadUIElements(paymentHistory)
 })
 
 
@@ -31,8 +24,10 @@ button.addEventListener("click", (event) => {
     
     jobPay = new JobPayment(hoursWorkedInput,payRateInput,stateAbbreviationInput);
 
+    ui.clearInputValues()
+
     storage.writeToStorage(jobPay)
-    display.displayPayment(jobPay , payID)
+    ui.displayPayment(jobPay)
     payID++
 
 });
@@ -40,6 +35,6 @@ button.addEventListener("click", (event) => {
 const deleteButton = document.getElementById("clearButton");
 deleteButton.addEventListener("click", (event) => { 
     storage.deleteStorage()
-    display.deleteHistory()
-    payID = 0
+    ui.deleteHistory()
+    ui.clearInputValues()
  })
