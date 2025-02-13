@@ -1,4 +1,5 @@
 class JobPayment {
+
     constructor(regularHours, regularPayRate, stateAbbreviation) {
         this._regularHours = regularHours;
         this._regularPayRate = regularPayRate;
