@@ -4,7 +4,10 @@ body {
   align-items: center;
 
   font-family: 'inter', Arial, Helvetica, sans-serif;
-  background-color: #f1f1f1;
+  background: #348F50;
+  background: -webkit-linear-gradient(to right, #56B4D3, #348F50);
+  background: linear-gradient(to right, #56B4D3, #348F50); 
+
 }
 
 #buttonArea {
